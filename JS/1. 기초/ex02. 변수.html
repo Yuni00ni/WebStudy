@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02. 변수</title>
+</head>
+<body>
+    <script>
+
+        // ★★★ 호이스팅 현상 ★★★ => "변수나 함수 선언이 코드의 맨 위로 끌어올려지는 현상"
+        // "변수가 선언되기 전에 사용하는 걸 허용하는 특성" 이라고 생각하면 됨
+        // 하지만 let과 const는 더 엄격하게 동작하기 때문에 선언 전에 사용하려 하면 에러가 발생함
+
+        // var : 코드가 실행되면 메모리에 변수, 함수를 미리 저장
+        console.log('script의 위쪽 : ' + color);
+        // let도 호이스팅이 일어나긴 함
+        // TDZ라는 공간에 메모리를 저장을 해두고
+        // 선언이 나오기 전엔느 접근이 불가능하게 만듦
+        // TDZ : Temporal Dead Zone (임시로 만들어진 공간, 일시적 사각지대)
+        console.log('script의 위쪽 : ' + color2);
+        
+        
+        // 변수 : 데이터를 담는 공간
+
+        
+        // 1. var
+        var color = 'black'; // 선언
+        var color = 'pink'; // 재선언 가능
+        color = 'yellow'; // 재할당 가능
+        console.log('var : ' + color);
+
+        // 2. let
+        let color2 = 'black'; // 선언
+        // let color2 = 'red';  // 재선언 불가능
+        color2 = 'yellow'; // 재할당 가능
+        console.log('let : ' + color2);
+        
+        // 3. const(상수)
+        // 변하면 안되는 값 ex) 주민등록번호, 혈액형, 만렙 등
+        // 누군가 접근해서 재선언, 재할당 하면 안되는 값
+        const color3 = 'black'; // 선언
+        // const color3 = 'pink'; // 재선언 불가능
+        // color3 = 'yellow'; // 재할당 불가능
+        console.log('const : ' + color3);
+        
+        
+
+    </script>
+</body>
+</html>
