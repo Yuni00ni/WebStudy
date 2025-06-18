@@ -48,10 +48,22 @@
         // 5. 비교연산자 : >, <, >=, <=, ==, ===, !=, !==
         // ==(동등연산자) : 값만 비교
         // ===(일치연산자) : 값이랑 자료형을 모두 비교(and연산)
-        console.log(100 == '100');
-        console.log(100 === '100');
-        console.log(100 === 100);
+        console.log(100 == '100'); // true
+        console.log(100 === '100'); // false
+        console.log(100 === 100); // true
 
+        // 6. 논리연산자 : !(NOT), &&(AND), ||(OR)
+        // !true -> false / !false -> true
+        // && -> 둘 다 참이면 참 / 둘 중에 하나라도 거짓이거나 둘 다 거짓이면 거짓
+        // || -> 둘 중에 하나라도 참이면 참 / 둘 다 참이여도 참 / 둘 다 거짓이면 거짓
+
+        // 7. 삼항연산자
+        // 조건식 ? 실행문1(ture) : 실행문2(false);
+        let dinner = true;
+        let answer = dinner ? "영화보러갈래?" : "밥먹으러갈래?";
+        let answer2 = !dinner ? "영화보러갈래?" : "밥먹으러갈래?";
+        console.log(answer);
+        console.log(answer2);
         
 
     </script>
