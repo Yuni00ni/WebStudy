@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06. 연산자실습</title>
+</head>
+<body>
+    <script>
+
+        // 1. 사용자한테 세자리 수 입력 받기
+        // => String -> 숫자
+        
+        // 2. 백의 자리 이하를 버린 수를 console 창에 출력
+
+        // Case 1.
+
+        let num1 = parseInt(prompt("수를 입력해주세요"));
+        console.log(parseInt((num1 / 100)) * 100);
+        
+        
+        // Case 2.
+        let num2 = parseInt(prompt("수를 입력해주세요"));
+        console.log(num2 - (num2 % 100));
+        
+        
+
+    </script>
+</body>
+</html>
