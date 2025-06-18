@@ -31,10 +31,117 @@
             
         };
 
+        // 이건 그냥 해본거임
         // 삼항연산자
         num >= 20 ? console.log('20보다 크거나 같다.') : console.log("20보다 작다.");
         
+        /* 
+            if-else문 - 단순히 참과 거짓을 구분할 때 사용
+            if(조건식) {
+                실행문 (if == true)
+            }else {
+                실행문 (if == false)
+            }
+        */
+
+        num = 15;
+        // num이 10보다 크다면 '큰 수'를 console로 출력
+        // 그렇지 않으면, '작은 수'를 console 출력
+        if(num > 10) {
+            console.log("큰 수");
+            
+        } else {
+            console.log("작은 수");
+            
+        }
+
+        /* 
+            다중 if문 - 조건마다 달라지는 결과값을 주고 싶을 때 사용
+            if(조건식) {
+                실행문
+            } else if(조건식) {
+                실행문 
+            }else if(조건식) {
+                실행문
+            }else {
+                실행문(나머지의 예외처리로 마무리) %생략 가능%
+            }
+
+        */
+
+        // num이 10보다 크다면 '큰 수'를 console로 출력
+        // num이 5보다 같거나 크다면 '중간 수'를 console로 출력
+        // 그외, '작은 수'를 console에 출력
+        num = 5;
+        if(num > 10) {
+            console.log('큰 수');
+            
+        }else if(num >= 5) {
+            console.log('중간 수');
+            
+        }else {
+            console.log('작은 수');
+            
+        }
+
+
+        /* 
+            switch문 - 조건식의 결과값과 case문의 값이 일치하는지 비교
+            break문 - 참 이후로도 문장이 실행이 되기 때문에
+                            다른 case문으로 넘어가지 않도록 조건문을 종료할 수 있게 하는 구문
+            default문 - 모든 case문이 일치하지 않은 경우에 동작하는 구문(==else)
+
+            switch(식) {
+                case 값 : 
+                        실행문
+                        break;
+                default :
+                        실행문
+                        break;
+            }
+        */
+
+        num = 15;
+        switch(num) {
+            case 1 :
+            case 2 :
+            case 3 :
+            case 4 :
+                console.log('작은 수...');
+                break;
+            case 5 :
+            case 6 :
+            case 7 :
+            case 8 :
+            case 9 :
+            case 10 :
+                console.log('중간 수!');
+                break;
+            default :
+                console.log('큰 수!');
+                break;
+        };
+
+
+        // 다중 if문 실습
+
         
+        // 입력받아서
+        // 주문한 음료가 아메리카노 이면 '주문하신 음료 나왔습니다.' 를 console로 출력
+        // 주문한 음료가 시즌 음료인 수박 주스 이면 'ooo은 대기시간이 5분입니다.'를 console로 출력
+        // 주문한 음료가 민트 초코 이면 '맛잘알이시군요!'를 console에 출력
+        // 그 외, 오늘도 좋은 하루 보내세요~!
+        let str = prompt("주문하시겠어요?");
+        if(str == "아메리카노") {
+            console.log("주문하신 음료 나왔습니다.");
+        }else if(str == "수박 주스") {
+            console.log('수박 주스는 대기시간이 5분입니다.');
+        }else if(str == "민트 초코") {
+            console.log("맛잘알이시군요!");
+        }else {
+            console.log("오늘도 좋은 하루 보내세요~!");
+            
+        }
     </script>
 </body>
 </html>
