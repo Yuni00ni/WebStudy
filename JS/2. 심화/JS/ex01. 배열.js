@@ -108,3 +108,19 @@ for(let i = 0; i < list.length; i++) {
     console.log(list[i]);
     
 }
+
+// (2) for-of문
+let foodList = ['삼겹살', '대창', '곱창', '회'];
+
+for(let i of foodList) {
+    console.log(i);
+    
+}
+
+// (3) for-each문
+let subList = ['HTML', 'CSS', 'JS'];
+
+subList.forEach((item, index)=>{
+    console.log(index, item);
+    
+})
