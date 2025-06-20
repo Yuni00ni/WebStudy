@@ -13,6 +13,9 @@
         과일을 간다.
     }
 */
+
+makeJuice();
+
 function makeJuice() {
     console.log('========================================');
     console.log('주스 제조 시작!');
