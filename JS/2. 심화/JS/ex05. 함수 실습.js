@@ -18,6 +18,7 @@ const addNumber2 = function(num1, num2) {
     
 }
 addNumber2(num1, num2);
+
 const addNumber3 = (num1, num2) => {
     console.log(num1 + num2);
     
