@@ -4,7 +4,7 @@ let arr = ["가위", "바위", "보"];
 
 // 2. 사용자의 선택을 입력받습니다. -> myChoice
 //      - 무엇을 내시겠습니까? (가위, 바위, 보)
-let myChoice = prompt("무엇을 내시겠습니까?");
+let myChoice = prompt("무엇을 내시겠습니까? (가위,바위,보)");
 
 console.log(myChoice);
 
@@ -22,23 +22,24 @@ document.write('나의 선택 : ', myChoice);
 document.write('<br>')
 document.write('컴퓨터의 선택 : ', comChoice);
 document.write('<br>')
+document.write('<hr>')
 // 5. 가위바위보의 결과 또한 문서에 출력 (result - 승리, 패배, 무승부, 게임오류)
 //      - 가위바위보의 로직대로 승부 판정
 //      - 사용자가 다른 걸 입력했을 때 '게임오류'
 if(myChoice == comChoice) {
-    document.write('무승부');
+    document.write('결과는 무승부입니다.');
 }else if(
     (myChoice == "가위" && comChoice == "바위"),
     (myChoice == "바위" && comChoice == "보"),
     (myChoice == "보" && comChoice == "가위")
 ) {
-    document.write("패배");
+    document.write("결과는 패배입니다.");
 }else if(
     (myChoice == "가위" && comChoice == "보"),
     (myChoice == "바위" && comChoice == "가위"),
     (myChoice == "보" && comChoice == "바위")
 ) {
-    document.write("승리");
+    document.write("결과는 승리입니다.");
 }else {
-    document.write("게임오류");
+    document.write("게임오류 새로고침 해주세요.");
 }
