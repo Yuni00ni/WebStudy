@@ -76,3 +76,29 @@ console.log(makeRandom() + 2);
 console.log(makeRandom() - 2);
 console.log(makeRandom() / 2);
 console.log(makeRandom() % 2);
+
+// 함수 또한 호이스팅 현상의 영향을 받고 있음!
+// => 이를 해결!
+// 변수는 이를 let, const를 통해 방지
+// => 함수도 그 안에 넣어버리자! 재선언, 재할당 방지하기 위해 const를 사용
+
+// 5. 함수 표현식
+const makeJuice2 = function () {
+    console.log('========================================');
+    console.log('주스 제조 시작!');
+    console.log('오렌지를 착즙한다.');
+    console.log('오렌지 주스가 완성되었다!');
+    console.log('========================================');
+}
+
+// 6. 화살표함수 Arrow Function
+
+const makeJuice3 =  () => {
+    console.log('========================================');
+    console.log('주스 제조 시작!');
+    console.log('오렌지를 착즙한다.');
+    console.log('오렌지 주스가 완성되었다!');
+    console.log('========================================');
+}
+
+makeJuice3();
