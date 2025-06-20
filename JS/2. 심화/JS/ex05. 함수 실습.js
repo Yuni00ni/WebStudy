@@ -29,3 +29,28 @@ const addNumber3 = (num1, num2) => {
 addNumber1(num1, num2);
 addNumber2(num1, num2);
 addNumber3(num1, num2);
+
+
+
+// 입력받고 사용하는 사칙연산 함수
+
+let n = prompt('기호를 입력하세요');
+
+const addNumber4 = (a, b, n) => {
+
+    if(n == '+') {
+        return a + b;
+    }else if(n == '-') {
+        return a - b;
+    }else if(n == '*') {
+        return a * b;
+    }else if(n == '/') {
+        return a / b;
+    }else if(n == '%') {
+        return a % b;
+    }else {
+        return "잘못된 입력입니다."
+    }
+}
+
+console.log(`연산 결과 : ${addNumber4(num1, num2, n)}`);
