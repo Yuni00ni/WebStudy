@@ -40,6 +40,6 @@ console.log(userSelect);
 if(userSelect == 1 || userSelect == 2 || userSelect == 3) {
     document.write(` <img src="${pokemon[userSelect-1].img}"><br> ${pokemon[userSelect-1].name} (타입 : ${pokemon[userSelect-1].type})</p>`);
 }else{
-    document.write('죄송합니다. 잘못입력하셨습니다.');
+    document.write('<p>죄송합니다. 잘못입력하셨습니다.</p>');
 
 }
