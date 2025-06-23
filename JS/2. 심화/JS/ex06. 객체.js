@@ -101,6 +101,3 @@ for(let i = 0; i < person2.hobby.length; i++) {
 
     5. 배열과 객체는 복합적으로 사용 가능
 */
-
-
-
