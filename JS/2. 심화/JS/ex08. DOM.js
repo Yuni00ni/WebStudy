@@ -57,4 +57,10 @@ console.log(pTagClass[1]);
 
 pTagClass[0].innerText = '제 이름은 홍길동입니다.'
 
-// STEP 3. 
+// STEP 3. class가 pTag인 모든 요소를 가져와보자!
+
+for(let i = 0; i < pTagClass.length; i++) {
+     console.log('for문으로 가져오기 : ', pTagClass[i].innerText);
+     
+}
+
