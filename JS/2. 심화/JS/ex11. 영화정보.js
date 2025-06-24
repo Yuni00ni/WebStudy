@@ -4,11 +4,14 @@ let movieURL = 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searc
 // fetch API : 비동기 통신을 위한 문법
 //                  Client와 Server 사이에 데이터를 주고받기 위한 비동기 통신 API
 // 반환 타입 : Promise 객체 -> text(), json()
-fetch(movieURL) // -> 서버 요청
+
+
+// fetch(movieURL) // -> 서버 요청
 // .then((res)=>res.text())
-.then((res)=>res.json()) // -> 응답을 json 형식으로 파싱
-.then((data) => console.log(data)) // -> json 데이터 사용
-.catch((error) => console.log(error)) // -> 에러 처리
+// .then((res)=>res.json()) // -> 응답을 json 형식으로 파싱
+// .then((data) => console.log(data)) // -> json 데이터 사용
+// .catch((error) => console.log(error)) // -> 에러 처리
+
 
 // then -> 요청 성공 시, 응답 처리(성공했을 때 실행하는 함수)
 // 첫번째 then -> json 데이터 파싱(응답을 받아서 json형식으로 변환)
@@ -21,3 +24,15 @@ fetch(movieURL) // -> 서버 요청
 
 // text() : 문자열 데이터 반환
 // json() : json 데이터 반환
+
+// async & await '예약어'를 활용한 비동기 통신
+// -> fetch API의 문법을 간결화하기 위한 예약어
+// await 예약어는 async로 정의된 함수 내에서만 사용이 가능
+const getMovieData = async () => {
+    // 서버로부터 응답이 올 때까지 잠시 대기! -> await
+    let res = await fetch(movieURL);
+    let data = await res.json();
+    console.log('영화 정보 : ', data);
+    
+}
+getMovieData();
