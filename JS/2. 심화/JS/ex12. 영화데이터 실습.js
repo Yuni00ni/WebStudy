@@ -16,7 +16,7 @@ const getMovieData = async () => {
     console.log(movieDataList);
     for(let i = 0; i < movieDataList.length; i++) {
         let movieList = document.getElementById('movie-list');
-        movieList.innerText = `<table><th>순위</th><th>영화 이름</th><th>개봉일</th><tbody><td>${movieList[i].rank}</td><td>${movieList[i].movieNm}<td>${}</td></td></tbody></table>`
+        movieList.innerText = `<table><th>순위</th><th>영화 이름</th><th>개봉일</th><tbody><td>${movieList[i].rank}</td><td>${movieList[i].movieNm}<td>${movieList[i].openDt}</td></td></tbody></table>`
     }
     
 }
