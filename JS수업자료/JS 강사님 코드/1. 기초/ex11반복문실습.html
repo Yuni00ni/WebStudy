@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 제목</title>
+</head>
+<body>
+
+    <script>
+        // 1. 랜덤한 숫자를 하나 뽑아준다.
+        // 랜덤수 : 1~100
+        let ranNum = parseInt(Math.random()*100)+1;
+        console.log(ranNum);
+
+        // 2. 사용자한테 숫자를 입력 받기
+        // -> 맞출 때까지 -> 횟수 모름 -> while문
+        // => 입력 숫자 > 랜덤숫자
+        //    "입력한 수보다 작은 수 입니다."
+        // => 입력 숫자 < 랜덤숫자
+        // "입력한 수보다 큰 수 입니다."
+        // => 입력 숫자 == 랜덤숫자
+        // "정답입니다. 축하합니다~!"
+        // ==> alert 기능을 이용해서 창으로!
+        while(true){
+            let num =Number(prompt('숫자를 입력해주세요.'));
+
+            if(num > ranNum){
+                alert("입력한 수보다 작은 수 입니다.");
+            }else if(num < ranNum){
+                alert("입력한 수보다 큰 수 입니다.")
+            }else if(num == ranNum){
+                alert("정답입니다. 축하합니다~!");
+                break; // 무한루프 방지용, 반복문을 빠져나올 구실
+            }
+        }
+    </script>    
+</body>
+</html>

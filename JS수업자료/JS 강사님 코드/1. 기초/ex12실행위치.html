@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 제목</title>
+</head>
+<body>
+
+    <!-- 3. 인라인 방식 : 태그에 직접 기능을 넣어줄 때 작성 -->
+     <button onmouseenter="console.log('마우스 올림!');">
+        Mouse
+     </button>
+
+    <!-- 1. 내부방식 : html 파일 내에 script 태그를 통해서 작성
+         -> 보안에 취약 
+    -->
+    <script>
+        console.log('내부 방식으로 작성!');
+    </script>
+
+    <!-- 2. 외부방식
+          1) 외부에 js 파일 생성
+          2) html - js 파일 연결 
+    -->
+    <script src="./ex12외부.js"></script>
+</body>
+</html>

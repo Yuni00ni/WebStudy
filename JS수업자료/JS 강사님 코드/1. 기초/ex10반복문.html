@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+            for문
+
+            for(let i=시작숫자; i<끝숫자; i++){
+                실행문
+            }
+            -> 반복 횟수를 알 때 사용
+        */
+
+        // 0부터 9까지 1씩 증가하면서 반복
+        for(let i=0; i<10; i++){
+            console.log(i+1);
+        }
+
+        // 1부터 100까지 1씩 증가하면서 반복
+        // 총합만 결과에 나올 수 있도록 출력 => 누적연산(복합대입연산)
+        let sum = 0;
+        for(let i=1; i<=100; i++){
+            sum += i;
+        }
+        console.log(sum);
+
+        /*
+            while문
+
+            while(조건식){
+                실행문
+                break;
+            }
+            -> 반복 횟수를 모를 때 사용
+        */
+       
+        let num = 0;
+       while(true){
+        console.log(num);
+        num += 1;
+
+        if(num > 5){
+            break;
+        } 
+       } 
+
+       let num2 = 0;
+       while(num2 < 5){
+            console.log(num2);
+            num2 += 1;
+       }
+
+    </script>
+</body>
+</html>

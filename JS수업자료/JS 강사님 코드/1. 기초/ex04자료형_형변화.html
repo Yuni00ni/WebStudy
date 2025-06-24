@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 1. Number : 정수, 실수 등 산술 연산이 가능한 자료형
+        let num1 = 1.234;
+        let num2 = 5;
+        console.log('num1 : ', num1);
+        console.log('num2 : ', num2);
+
+        // 2. String : 문자열로 이루어진 자료형
+        let str1 = '안녕하세요!';
+        let str2 = '반갑습니다!';
+        console.log('str1 : ', str1);
+        console.log('str2 : ', str2);
+        
+        // 3. Boolean : 참/거짓으로 표현되는 논리 형태의 자료형
+        let isFemale = true;
+        let isYoung = false;
+        console.log('여성인가요?', isFemale);
+        console.log('어린가요?', isYoung);
+        
+        // 4. undefined : 값이 할당된 적이 없거나 존재하지 않는 속성일 때의 유형
+        //               => 값이 할당하지 않은 상태
+        let value1;
+        console.log(value1);
+        
+        // 5. null : 아무런 값을 나타내지 않은 때의 자료형
+        //         => 의도적으로 비어있는 상태
+        let value2 = null;
+        console.log(value2);
+
+        //--------------------------------------------
+
+        // 형변환
+
+        // 문자 -> 숫자 형변환
+        let number = '3.14';
+        console.log(number);
+        
+        // 1) 정수화(parseInt)
+        console.log('int : ', parseInt(number));
+        
+        // 2) 실수화(parseFloat)
+        console.log('float : ', parseFloat(number));
+
+        // 3) 숫자화(Number)
+        console.log('Number : ', Number(number));
+        
+        
+        // 숫자 -> 문자 형변환
+        let number2 = 100;
+        console.log(number2);
+        console.log(number2 + '');
+        console.log(number2 + '10');
+        console.log(String(number2));
+        console.log(number2.toString(2));
+        
+        
+    </script>
+</body>
+</html>

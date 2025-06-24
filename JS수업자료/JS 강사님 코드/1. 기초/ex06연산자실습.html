@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 1. 사용자한테 세자리 수 입력 받기
+        // => String -> 숫자
+        let num = Number(prompt('세자리 숫자를 입력하세요.'));
+        console.log(num);
+        
+        // 2. 백의 자리 이하를 버린 수를 console 창에 출력
+        // Case 1. 형변환
+        console.log(parseInt(num/100)*100);
+        // -> 입력 받을 때 형변환 x, 결과를 낼 때 형변환 시켜줄 수 있음
+        
+        // Case 2. 나머지 연산자
+        console.log(num-(num%100));
+
+    </script>
+</body>
+</html>

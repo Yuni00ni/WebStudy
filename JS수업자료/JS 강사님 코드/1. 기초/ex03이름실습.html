@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 1. 사용자에게 이름을 입력 받기
+        // '이름을 입력하세요.'
+        let name = prompt('이름을 입력하세요.');
+
+        // 2. console창에 출력하기
+        console.log('어서오세요!');
+        console.log(name + '님, 환영합니다~!');
+
+        // 3. 웹페이지에 출력하기
+        // 안녕 ooo님 환영합니다!
+        document.write('안녕 ' + name + '님 환영합니다~!');
+
+        // 문자 + 변수 이어서 쓰는 방법
+        // 1. 콤마(,)
+        // 2. 더하기(+)
+        // 3. 문자포매팅 백틱(``)
+        document.write(`안녕 ${name}님 환영합니다.`);
+
+    </script>
+</body>
+</html>
