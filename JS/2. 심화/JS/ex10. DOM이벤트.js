@@ -34,3 +34,11 @@ btn2.addEventListener('click', popUp2);
 btn2.addEventListener('click', ()=>{
     alert('이름 없이 직접 등록한 함수');
 });
+
+// Case 4. 이벤트 객체
+// 이벤트가 발생하는 그 주체와 내용을 알고싶을 때
+// ex) 사용자가 어떤 버튼을 눌렀는지 알고 싶을 때 사용
+let btn3 = document.getElementById('btn_event');
+btn3.addEventListener('click', (e) => {
+    console.log('이벤트 : ', e.target);
+});
