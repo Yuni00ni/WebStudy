@@ -1,5 +1,6 @@
+import {moviekey} from '../config.js';
+
 // movie url
-let moviekey = '0c992ed3d023fb295c8588f5dba544f8'  // 여기에 영진위 본인 키 입력하기
 let movieURL = 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=' + moviekey + '&targetDt=20250623';
 
 // moviedata res & req
@@ -29,3 +30,12 @@ const req_btn = document.getElementById('req_btn'); // html 내부 태그 id값�
 req_btn.addEventListener('click', getMovieData); // 태그 클릭 시 이벤트 추가
 
 
+// 1. 버튼 클릭 시, 영화정보를 서버로부터 받아온 후
+//      웹 페이지에 출력하는 프로그램 구현
+//      각 요소에 접근
+
+// 2. fetch API 사용해서 데이터 가져오기
+
+// 3. 가져온 데이터 변수에 저장(movieList)
+
+// 4. 데이터 표 형식으로 출력
