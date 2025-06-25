@@ -14,11 +14,19 @@ const getMovieData = async () => {
     // 데이터 표 만들기 순위 : rank, 이름 : movieNm, 개봉일 : openDt
     let movieDataList = data.boxOfficeResult.dailyBoxOfficeList;
     console.log(movieDataList);
-    for(let i = 0; i < movieDataList.length; i++) {
-        let movieList = document.getElementById('movie-list');
-        movieList.innerText = `<table><th>순위</th><th>영화 이름</th><th>개봉일</th><tbody><td>${movieList[i].rank}</td><td>${movieList[i].movieNm}<td>${movieList[i].openDt}</td></td></tbody></table>`
-    }
     
+    let movieList = document.getElementById('movie-list');
+    movieList.innerHTML = '<table border="1px solid black"> <th>순위</th><th>영화 이름</th><th>개봉일</th><tbody></tbody></table>'
+    
+    let tbody = document.querySelector('tbody');
+    
+    for(let i = 0; i < movieDataList.length; i++) {
+        tbody.innerHTML += `<td>${movieDataList[i].rank}</td><td>${movieDataList[i].movieNm}</td><td>${movieDataList[i].openDt}</td>`
+    }
+
+    
+
+    // '<table border="1px solid black"><th>순위</th><th>영화 이름</th><th>개봉일</th><tbody><td>' + movieList[i].rank + '</td><td>' + movieList[i].movieNm + '<td>'+ movieList[i].openDt + '</td></td></tbody></table>'
 }
 // onclick event
 const req_btn = document.getElementById('req_btn');
