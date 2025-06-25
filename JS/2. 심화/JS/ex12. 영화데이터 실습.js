@@ -1,5 +1,6 @@
 // movie url
-let movieURL = 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=0170eee9fa98a2d950aaa0575e7d94d1&targetDt=20250623';
+let moviekey = ''  // 여기에 영진위 본인 키 입력하기
+let movieURL = 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=' + moviekey + '&targetDt=20250623';
 
 // moviedata res & req
 const getMovieData = async () => {
