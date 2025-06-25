@@ -3,12 +3,14 @@ import {moviekey} from '../config.js';
 // 1. 버튼 클릭 시, 영화정보를 서버로부터 받아온 후
 //      웹 페이지에 출력하는 프로그램 구현
 //      각 요소에 접근
-
+let movieList = document.getElementById('movie-list');
 // 2. fetch API 사용해서 데이터 가져오기
 
 // 3. 가져온 데이터 변수에 저장(movieList)
+// 데이터 접근 -> boxOfficeResult -> dailyBoxOfficeList
 
 // 4. 데이터 표 형식으로 출력
+// 4-1. 버튼을 눌렀을 때, 표가 나와야하므로 이벤트 처리가 필요
 
 
 
@@ -26,7 +28,7 @@ const getMovieData = async () => {
     
     // 데이터 표 만들기 순위 : rank, 이름 : movieNm, 개봉일 : openDt
     let movieDataList = data.boxOfficeResult.dailyBoxOfficeList; // 객체 내부 배열까지 접근해서 변수에 담기
-    console.log(movieDataList); // 디버깅
+    console.log(movieDataList); // 디버깅 하려다 말았음
     
     let movieList = document.getElementById('movie-list'); // html 내부 태그 id값으로 가져오기
     movieList.innerHTML = '<table border="1px solid black"> <th>순위</th><th>영화 이름</th><th>개봉일</th><tbody></tbody></table>' // innerhtml 이용해서 내부에 표 기본 틀 작성하기
