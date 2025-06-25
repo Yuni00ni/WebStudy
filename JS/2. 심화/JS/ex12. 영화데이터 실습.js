@@ -1,6 +1,3 @@
-// 표 형식으로 영화 순위, 영화 이름, 개봉일 th로 테이블 나열하기
-// req_btn onclick 표 생성
-
 // movie url
 let movieURL = 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=0170eee9fa98a2d950aaa0575e7d94d1&targetDt=20250623';
 
