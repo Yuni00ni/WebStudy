@@ -1,3 +1,5 @@
 # esgc 수업
 
-# JS 부터 시작
+# JS 추가
+
+# node.js 추가
