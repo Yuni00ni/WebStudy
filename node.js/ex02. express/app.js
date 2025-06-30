@@ -36,13 +36,23 @@ app.post('/user/join', async (req, res)=>{
   const pw = req.body.pw;
   const nick = req.body.nick;
 
-  await createMember(id, pw, nick);
+  const result = await createMember(id, pw, nick);
+  console.log(result[0].affectedRows);
+  
   
   // 응답하는 파일이 화면에 보여지기는 하지만 주소창은 바뀌지 않음
   // -> 어색함
   // res.sendFile(path.join(__dirname, 'views', 'login.html'));
   // 이자리에서 login.html을 응답하는게 아니라
   // /login 경로로 요청을 다시 하게 만듦(주소도 바뀌고 login.html 응답받을 수 있음)
+
+  // affectedRow > 0 => 회원가입성공 => login 페이지 이동(/login)
+  // affectedRows = 0 => 회원가입실패 => join 페이지로 이동(/join)
+  if(result[0].affectedRows > 0){
+    res.redirect('/login');
+  }else{
+    res.redirect('/join');
+  }
   res.redirect('/login');
 });
 
