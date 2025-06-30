@@ -41,6 +41,15 @@ app.post('/user/join', (req, res)=>{
   
 });
 
+// /user/login
+app.post('/user/login', (req, res)=> {
+  // 로그인처리
+  console.log(req.body);
+  res.redirect('/login');
+  
+  
+});
+
 app.listen(8888, () => {
   console.log('Server is running on http://localhost:8888');
   
