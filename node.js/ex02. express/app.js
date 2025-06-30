@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path'); // 경로
+const {createMember} = require('./models/memberModel');
 
 const app = express(); // app(서버) 생성
 
@@ -24,12 +25,18 @@ app.get('/login', (req, res)=>{
 });
 
 // /user/join 요청 => 회원가입처리(생략) => login.html 응답
-app.post('/user/join', (req, res)=>{
+app.post('/user/join', async (req, res)=>{
   // 회원가입처리
   // 사용자가 입력한 값 = 요청데이터(아이디, 비밀번호, 닉네임) 확인하기
   // console.log(req.query); // 요청 데이터(쿼리) 확인 => url 뒤에 붙는 쿼리스트링(get으로 요청 시 입력값 가져오는 방법)
 
   console.log(req.body); // post(데이터가 패킷의 바디에 포함됨)
+  // {'id' : 'smhrd', ...}
+  const id = req.body.id; // body.id -> input 태그의 name과 동일(식별자)
+  const pw = req.body.pw;
+  const nick = req.body.nick;
+
+  await createMember(id, pw, nick);
   
   // 응답하는 파일이 화면에 보여지기는 하지만 주소창은 바뀌지 않음
   // -> 어색함
@@ -37,8 +44,6 @@ app.post('/user/join', (req, res)=>{
   // 이자리에서 login.html을 응답하는게 아니라
   // /login 경로로 요청을 다시 하게 만듦(주소도 바뀌고 login.html 응답받을 수 있음)
   res.redirect('/login');
-  console.log('nodemon');
-  
 });
 
 // /user/login
