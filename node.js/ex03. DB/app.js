@@ -32,10 +32,15 @@ app.post('/user/join', async (req, res)=>{
 });
 
 // 로그인 : 사용자가 입력한 아이디, 비밀번호가 member DB 있는 지 확인하고 있으면(성공) 없으면(실패)
-app.post('/user/login', (req, res)=> {
+app.post('/user/login', async (req, res)=> {
   const {id, pw} = req.body;
-  loginMember(id, pw);
+  const result = await loginMember(id, pw);
 
+  if(result.length > 0){
+    res.redirect('/');
+  }else {
+    res.redirect('/login');
+  }
 });
 
 app.listen(3000, ()=>{

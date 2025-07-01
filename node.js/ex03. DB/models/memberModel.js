@@ -28,9 +28,9 @@ async function loginMember(id, pw){
 
     try {
         // READ => select
-        const result = await conn.execute('select * from member where id = ? and pw = ?',
+        const [result] = await conn.execute('select * from member where id = ? and pw = ?',
         [id, pw]);
-        console.log(result);
+        return result;
     }finally {
         conn.release();
     }
