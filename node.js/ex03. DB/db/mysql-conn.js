@@ -1,4 +1,4 @@
-const mysql = require('mysql/promise');
+const mysql = require('mysql2/promise');
 
 // DB 연결정보
 const pool = mysql.createPool({
@@ -7,5 +7,6 @@ const pool = mysql.createPool({
     password : '1234',
     database : 'node'
 });
+
 
 module.exports = pool;

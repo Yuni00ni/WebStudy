@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path'); // 경로 다루는 모듈
 const pageRouter = require('./routes/pageRouter');
+const {createMember} = require('./models/memberModel');
 
 const app = express(); // app생성
 
@@ -14,7 +15,7 @@ app.post('/user/join', (req, res)=>{
   // 요청데이터 가져오기(body)
   console.log(req.body);
   const {id, pw, nick} = req.body;
-
+  createMember(id, pw, nick);
   
 })
 
