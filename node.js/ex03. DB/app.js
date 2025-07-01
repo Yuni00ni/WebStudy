@@ -11,10 +11,14 @@ app.get('/join', (req, res)=>{
   res.sendFile(path.join(__dirname, 'views', 'join.html'));
 });
 
-// login.html 응답
+// login.html 응답 localhost:8888/login
+app.get('/login',(req, res)=> {
+  res.sendFile(path.join(__dirname, 'views', 'login.html'));
+})
 
 app.listen(8888, ()=>{
-  console.log('Server is running on http::/localhost:8888');
-  
+  console.log('Server is running on http://localhost:8888');
+  console.log('join page http://localhost:8888/join');
+  console.log('login page http://localhost:8888/login');
 });
 
