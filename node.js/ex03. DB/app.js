@@ -1,41 +1,20 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const path = require('path'); // 경로 다루는 모듈
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
-var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+const app = express(); // app생성
+// 주소창에 주소를 입력해서 요청하는 것은 -> get요청
+// 단순히 페이지만 보여지는 것 -> get
+// join.html 응답 localhost:8888/join
+app.get('/join', (req, res)=>{
+  // __dirname : 현재 파일(app.ja)이 있는 절대 경로(ex03. DB폴더 내부) => ex03. DB경로/
+  res.sendFile(path.join(__dirname, 'views', 'join.html'));
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// login.html 응답
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+app.listen(8888, ()=>{
+  console.log('Server is running on http::/localhost:8888');
+  
 });
 
-module.exports = app;
