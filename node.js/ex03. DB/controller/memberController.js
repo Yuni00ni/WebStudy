@@ -1,4 +1,4 @@
-const {createMember, loginMember, updateMember, removeMember} = require('../models/memberModel');
+const { createMember, loginMember, updateMember, removeMember , getAllMember} = require('../models/memberModel');
 
 
 // 회원가입 기능
@@ -26,7 +26,7 @@ async function join(req, res) {
 // 로그인 기능
 async function login(req, res) {
 
-    
+
     const { id, pw } = req.body;
     const result = await loginMember(id, pw);
 
@@ -41,27 +41,32 @@ async function login(req, res) {
 // 회원정보 수정 기능
 async function update(req, res) {
     const { id, pw, nick } = req.body;
-    const result = await updateMember(id, pw, nick );
+    const result = await updateMember(id, pw, nick);
 
-    if(result > 0) { // 1 수정 성공
+    if (result > 0) { // 1 수정 성공
         res.redirect('/');
-    }else { // 0 수정 실패
+    } else { // 0 수정 실패
         res.redirect('/update');
     }
-    
+
 }
 
 // 회원탈퇴 기능
 async function remove(req, res) {
     // get으로 요청하는 경우에는 queryString으로 데이터가 url에 포함되서 오기 때문에 req.query로 데이터 가져와야함
-    const {id} = req.query;
+    const { id } = req.query;
     const result = await removeMember(id);
 
-    if(result > 0) { // 탈퇴성공 -> join.html
+    if (result > 0) { // 탈퇴성공 -> join.html
         res.redirect('/join');
-    }else { // 탈퇴실패 -> index.html
+    } else { // 탈퇴실패 -> index.html
         res.redirect('/');
     }
 }
 
-module.exports = {join, login, update, remove};
+// 회원목록 조회 기능
+async function list(req, res) {
+    await getAllMember();
+}
+
+module.exports = { join, login, update, remove, list };
