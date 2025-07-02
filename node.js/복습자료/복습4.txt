@@ -1,0 +1,14 @@
+// 로그인 절차
+- 로그인 페이지
+요청경로 : [GET] localhost:3000/login
+=> "/"로 시작하면 pageRouter로 모임
+=> "/login"으로 경로가 끝나면 login.html파일을 찾아서 응답
+
+- 로그인
+요청경로(./user/login) : [POST] localhost:3000/user/login
+=> "/user"로 시작하면 memberRouter로 모임
+=> "/login"으로 끝나면 memberController의 login함수 호출
+
+역할
+* Router : 길잡이, 경로에 따라서 어떻게 처리해야하는지 + Controller에서 수행하기에는 복잡한 기능도 추가적으로 정의
+* Controller : 비즈니스 로직
