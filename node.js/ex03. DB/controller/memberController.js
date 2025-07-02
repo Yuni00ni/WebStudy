@@ -1,6 +1,7 @@
-const {createMember, loginMember} = require('../models/memberModel');
+const {createMember, loginMember, updateMember} = require('../models/memberModel');
 
 
+// 회원가입 기능
 async function join(req, res) {
     // 요청데이터 가져오기(body)
     console.log(req.body);
@@ -22,6 +23,7 @@ async function join(req, res) {
 
 }
 
+// 로그인 기능
 async function login(req, res) {
 
     
@@ -36,4 +38,11 @@ async function login(req, res) {
 
 }
 
-module.exports = {join, login};
+// 회원정보 수정 기능
+async function update(req, res) {
+    const { id, pw, nick } = req.body;
+    await updateMember(id, pw, nick );
+    
+}
+
+module.exports = {join, login, update};

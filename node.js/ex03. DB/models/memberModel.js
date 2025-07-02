@@ -36,4 +36,18 @@ async function loginMember(id, pw){
     }
 }
 
-module.exports = {createMember, loginMember};
+// 회원정보수정
+async function updateMember(id, newPw, newNick) {
+    const conn = await pool.getConnection();
+
+    try{ // 무조건 실행하는 부분
+        const result = await conn.execute('update member set pw =? , nick =? where id =?',
+        [newPw, newNick, id]);
+        console.log(result);
+        return result;
+        
+    }finally{
+        conn.release();
+    }
+}
+module.exports = {createMember, loginMember, updateMember};
