@@ -51,4 +51,12 @@ async function update(req, res) {
     
 }
 
-module.exports = {join, login, update};
+// 회원탈퇴 기능
+function remove(req, res) {
+    // get으로 요청하는 경우에는 queryString으로 데이터가 url에 포함되서 오기 때문에 req.query로 데이터 가져와야함
+    const query = req.query;
+    console.log(query);
+    
+}
+
+module.exports = {join, login, update, remove};

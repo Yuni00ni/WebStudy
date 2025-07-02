@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {join, login, update} = require('../controller/memberController');
+const {join, login, update, remove} = require('../controller/memberController');
 
 router.post('/join', join);
 
@@ -10,5 +10,6 @@ router.post('/login', login);
 // 회원정보수정
 router.post('/update', update);
 
-
+// 회원탈퇴
+router.get('/delete', remove);
 module.exports = router;

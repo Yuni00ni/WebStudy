@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,31 +9,42 @@
         h1 {
             margin: 5px;
         }
+
         input {
             width: 120px;
             height: 30px;
             margin: 5px;
             display: flex;
+            cursor: pointer;
         }
     </style>
 </head>
+
 <body>
     <!-- localhost:3000/ -->
     <h1>메인화면</h1>
+
+    <!-- localhost:3000/login -->
     <form action="./login" method="get">
         <input type="submit" value="로그인 페이지">
     </form>
 
+    <!-- localhost:3000/join -->
     <form action="./join" method="get">
         <input type="submit" value="회원가입 페이지">
     </form>
-    <!-- <a href="login">로그인</a>
-    <a href="join">회원가입</a> -->
 
     <!-- 정보 수정 페이지 요청 :  [GET]localhost:3000/update-->
     <form action="./update" method="get">
-        <input type="submit" value = "정보 수정 페이지">
+        <input type="submit" value="정보 수정 페이지">
     </form>
-    
+
+    <!-- 회원탈퇴 요청 : [GET]localhost:3000/user/delete-->
+    <form action="./user/delete" method="get">
+        <input type="hidden" value="df" name="id">
+        <input type="submit" value="회원탈퇴">
+    </form>
+
 </body>
+
 </html>

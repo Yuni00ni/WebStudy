@@ -1,3 +1,9 @@
+-- 회원탈퇴 할 때 사용할 sql문
+delete from member where id = ?
+
+
+
+
 -- 수정할 때 사용할 sql문
 - 현재 로그인한 사용자를 구별하는 방법(식별 -> primary key(nn,uk) => id)
 update member set pw = ?, nick =? where id = ?(로그인한 사용자 아이디)
