@@ -50,4 +50,17 @@ async function updateMember(id, newPw, newNick) {
         conn.release();
     }
 }
-module.exports = {createMember, loginMember, updateMember};
+
+// 회원탈퇴
+async function removeMember(id) {
+    const conn = await pool.getConnection();
+    try {
+        const result = await conn.execute('delete from member where id = ?',
+            [id]
+        )
+        console.log(result);
+    }finally{
+        conn.release();
+    }
+}
+module.exports = {createMember, loginMember, updateMember, removeMember};
