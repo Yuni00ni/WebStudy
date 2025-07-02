@@ -55,9 +55,13 @@ async function update(req, res) {
 async function remove(req, res) {
     // get으로 요청하는 경우에는 queryString으로 데이터가 url에 포함되서 오기 때문에 req.query로 데이터 가져와야함
     const {id} = req.query;
-    await removeMember(id);
-    console.log(id);
-    
+    const result = await removeMember(id);
+
+    if(result > 0) { // 탈퇴성공 -> join.html
+        res.redirect('/join');
+    }else { // 탈퇴실패 -> index.html
+        res.redirect('/');
+    }
 }
 
 module.exports = {join, login, update, remove};

@@ -55,10 +55,11 @@ async function updateMember(id, newPw, newNick) {
 async function removeMember(id) {
     const conn = await pool.getConnection();
     try {
-        const result = await conn.execute('delete from member where id = ?',
+        const [result] = await conn.execute('delete from member where id = ?',
             [id]
         )
         console.log(result);
+        return result.affectedRows;
     }finally{
         conn.release();
     }
