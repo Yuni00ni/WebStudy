@@ -69,8 +69,9 @@ async function removeMember(id) {
 async function getAllMember() {
     const conn = await pool.getConnection();
     try {
-        const result = await conn.execute('select * from member');
+        const [result] = await conn.execute('select * from member');
         console.log(result);
+        return result;
         
     }finally{
         conn.release();
