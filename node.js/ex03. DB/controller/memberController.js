@@ -41,7 +41,13 @@ async function login(req, res) {
 // 회원정보 수정 기능
 async function update(req, res) {
     const { id, pw, nick } = req.body;
-    await updateMember(id, pw, nick );
+    const result = await updateMember(id, pw, nick );
+
+    if(result > 0) { // 1 수정 성공
+        res.redirect('/');
+    }else { // 0 수정 실패
+        res.redirect('/update');
+    }
     
 }
 
