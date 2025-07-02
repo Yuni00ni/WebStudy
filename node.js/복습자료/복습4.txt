@@ -8,7 +8,15 @@
 요청경로(./user/login) : [POST] localhost:3000/user/login
 => "/user"로 시작하면 memberRouter로 모임
 => "/login"으로 끝나면 memberController의 login함수 호출
+=> body에 포함된 id, pw 가져오기 (body-parser => app.js에 정의 먼저! ~~~> router 연결)
+=> memberModel의 loginMember함수 호출
+=> 결과는 memberController로 보냄(로그인 성공 시 = id, pw, nick 묶어서 반환 / 실패 시 = [](비어있음)
+=> 성공 -> index.html을 응답할 수 있는 경로로 다시 요청하게 redirect("/");
+     실패 -> login.html을 응답할 수 있는 경로로 다시 요청하게 redirect("/login");
+
 
 역할
 * Router : 길잡이, 경로에 따라서 어떻게 처리해야하는지 + Controller에서 수행하기에는 복잡한 기능도 추가적으로 정의
 * Controller : 비즈니스 로직
+* model : Database와 직접적으로 연결해서 처리(연결, sql실행, 결과받기, 연결해제)
+* mysql-conn : 연결할 Database 정보(host, user, password, database) ....
