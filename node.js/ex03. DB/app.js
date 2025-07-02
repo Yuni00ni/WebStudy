@@ -19,5 +19,6 @@ app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000');
   console.log('join page http://localhost:3000/join');
   console.log('login page http://localhost:3000/login');
+  console.log('login page http://localhost:3000/update');
 });
 

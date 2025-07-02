@@ -20,4 +20,9 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'views', 'index.html'))
 })
 
+// localhost:3000/update
+router.get('/update', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'views', 'update.html'))
+})
+
 module.exports = router;
