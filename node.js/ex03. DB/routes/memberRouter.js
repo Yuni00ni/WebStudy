@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {join, login, update, remove, list} = require('../controller/memberController');
+const {join, login, update, remove, list, getSession} = require('../controller/memberController');
 
 router.post('/join', join);
 
@@ -15,4 +15,8 @@ router.get('/delete', remove);
 
 // 회원목록 조회
 router.get('/list', list);
+
+// 뭐더라
+router.get('/', getSession);
+
 module.exports = router;

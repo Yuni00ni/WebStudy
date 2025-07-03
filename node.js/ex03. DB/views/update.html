@@ -19,6 +19,15 @@
         <input type="submit" value="수정">
     </form>
     
+    <script>
+        // [get] localhost:3000/user/
+        document.addEventListener('DOMContentLoaded', ()=>{
+            fetch('./user')
+            .then(res => res.json())
+            .then(user => { console.log(user)})
+            .catch(error => {console.log('실패 : ', error)});
+        });
+    </script>
 </body>
 
 </html>

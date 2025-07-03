@@ -81,4 +81,12 @@ async function list(req, res) {
     // 'hello'같은 문자열을 보내고 싶을 때 res.send('hello'); 문자열로 응답
 }
 
-module.exports = { join, login, update, remove, list };
+// 뭐더라
+function getSession(req, res) {
+    // session에 저장된 값(아이디, 닉네임) 응답 -> 로그인할 때 생성해준 세션 값
+    res.json(req.session.loginMember);
+}
+
+
+
+module.exports = { join, login, update, remove, list, getSession };
