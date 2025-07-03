@@ -16,9 +16,11 @@ async function login(req, res) {
             nick: result.nick
         }
 
-        res.send('로그인 성공!'); // 텍스트 응답
+        // res.send('로그인 성공!'); // 텍스트 응답
+        res.redirect('/');
     } else { // 로그인 실패
-        res.send('로그인 실패..');
+        // res.send('로그인 실패..');
+        res.redirect('/login');
     }
 };
 

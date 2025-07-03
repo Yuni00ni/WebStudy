@@ -3,9 +3,13 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 
-/* GET login page. */
+/* 로그인 페이지 */
 router.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'views', 'login.html'));
 });
 
+// 메인 페이지
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+})
 module.exports = router;

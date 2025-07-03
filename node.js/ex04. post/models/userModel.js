@@ -15,4 +15,4 @@ async function loginUser(id, pw) {
     }
 }
 
-module.exports = { loginUser };
+module.exports = { loginUser }; 
