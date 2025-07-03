@@ -1,4 +1,4 @@
-const { createMember, loginMember, updateMember, removeMember , getAllMember} = require('../models/memberModel');
+const { createMember, loginMember, updateMember, removeMember, getAllMember } = require('../models/memberModel');
 
 
 // 회원가입 기능
@@ -28,9 +28,18 @@ async function login(req, res) {
 
 
     const { id, pw } = req.body;
-    const result = await loginMember(id, pw);
+    const [result] = await loginMember(id, pw);
 
-    if (result.length > 0) {
+    // 세션에 값 저장(로그인 성공 시)
+    if (result) {
+        req.session.loginMember = {
+            id : result.id,
+            nick : result.nick
+        }
+    }
+
+
+    if (result) {
         res.redirect('/');
     } else {
         res.redirect('/login');
