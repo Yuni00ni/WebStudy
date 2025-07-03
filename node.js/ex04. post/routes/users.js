@@ -1,11 +1,10 @@
 // 유저 관련 라우터
 
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const { login } = require('../controller/userController');
+const router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+/* 로그인 처리 */
+router.post('/login', login);
 
 module.exports = router;

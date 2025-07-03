@@ -23,6 +23,6 @@ app.use('/users', userRoutes); // localhost:3000/users/ ~
 
 app.listen(3000, () => {
   console.log('Server is runnig on http://localhost:3000');
-  console.log('Server is runnig on http://localhost:3000/users/login');
+  console.log('Server is runnig on http://localhost:3000/login');
   
 });
