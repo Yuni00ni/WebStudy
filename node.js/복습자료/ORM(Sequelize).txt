@@ -1,0 +1,7 @@
+ORM (Sequelize)
+=> create문 직접 작성해서 테이블 생성(현재)
+=> 객체 정의(제목 - String/ 작성일자 - Date...) => 자동으로 테이블 생성
+=> 객체의 함수만 호출해도 insert, select, update, delete 자동으로 호출
+find() => select ~...
+
+REST API : 규칙

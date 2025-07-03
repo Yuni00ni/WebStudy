@@ -45,7 +45,7 @@
 
     <!-- 회원탈퇴 요청 : [GET]localhost:3000/user/delete-->
     <form action="./user/delete" method="get">
-        <input type="hidden" value="df" name="id">
+        <input type="hidden" name="id" id="delete-form-id">
         <input type="submit" value="회원탈퇴">
     </form>
 
@@ -96,7 +96,20 @@
                     });
 
                 })
+
+                fetch('./user')
+                .then(res => res.json())
+                .then(user => {
+                    console.log(user)
+                    document.getElementById('delete-form-id').value = user.id;
+
+                })
+                .catch(error => { console.log('실패 : ', error) });
+
         });
+
+
+
     </script>
 </body>
 
