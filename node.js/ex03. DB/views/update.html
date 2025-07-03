@@ -13,19 +13,25 @@
         (Session -> 사용자 관련 정보를 서버쪽에 저장(유지)하는 방식)
     -->
     <form action="./user/update" method="post">
-        <input type="hidden" id="id" placeholder="아이디" name="id" value="df"><br>
-        <input type="password" id="pw" placeholder="수정할 비밀번호" name="pw"><br>
-        <input type=" text" id="nick" placeholder="수정할 닉네임" name="nick"><br>
+        <input type="hidden" placeholder="아이디" name="id" id="update-form-id"><br>
+        <input type="password" placeholder="수정할 비밀번호" name="pw"><br>
+        <input type=" text" placeholder="수정할 닉네임" name="nick" id="update-form-nick"><br>
         <input type="submit" value="수정">
     </form>
-    
+
     <script>
         // [get] localhost:3000/user/
-        document.addEventListener('DOMContentLoaded', ()=>{
+        document.addEventListener('DOMContentLoaded', () => {
             fetch('./user')
-            .then(res => res.json())
-            .then(user => { console.log(user)})
-            .catch(error => {console.log('실패 : ', error)});
+                .then(res => res.json())
+                .then(user => {
+                    console.log(user)
+                    document.getElementById('update-form-id').value = user.id;
+                    document.getElementById('update-form-nick').value = user.nick;
+
+
+                })
+                .catch(error => { console.log('실패 : ', error) });
         });
     </script>
 </body>

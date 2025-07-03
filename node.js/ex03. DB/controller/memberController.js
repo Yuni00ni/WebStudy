@@ -76,7 +76,7 @@ async function remove(req, res) {
 // 회원목록 조회 기능
 async function list(req, res) {
     const result = await getAllMember();
-    // result 형태(josn Array)그대로 응답
+    // result 형태(json Array)그대로 응답
     res.json(result); // json형태 데이터 응답
     // 'hello'같은 문자열을 보내고 싶을 때 res.send('hello'); 문자열로 응답
 }
