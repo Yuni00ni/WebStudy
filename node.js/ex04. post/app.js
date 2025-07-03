@@ -1,41 +1,28 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const indexRoutes = require('./routes/index');
+const userRoutes = require('./routes/users');
+const session = require('express-session');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const app = express();
 
-var app = express();
+// middle-ware(미들웨어) : 요청 ~ 응답 존재하는 기술
+app.use(express.urlencoded({extended:true})); // body-parser
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.use(session({ // session
+  secret : 'mySecretKey',
+  resave : false,
+  saveUninitialized : false,
+  cookie : {
+    maxAge : 1000 * 60 * 30
+  }
+}));
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', indexRoutes); // localhost:3000/ ~
+app.use('/users', userRoutes); // localhost:3000/users/ ~
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+app.listen(3000, () => {
+  console.log('Server is runnig on http://localhost:3000');
+  console.log('Server is runnig on http://localhost:3000/users/login');
+  
 });
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;

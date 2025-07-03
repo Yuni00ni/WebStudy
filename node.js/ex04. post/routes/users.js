@@ -1,3 +1,5 @@
+// 유저 관련 라우터
+
 var express = require('express');
 var router = express.Router();
 
