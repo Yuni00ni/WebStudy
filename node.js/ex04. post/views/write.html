@@ -9,16 +9,29 @@
 
 <body>
 
-
-    <form action="" method="">
-        <input type="text" placeholder="게시물 제목"><br>
-        <input type="text" placeholder="작성자" id="post-frm-writer" readonly><br>
-        <textarea placeholder="게시물 내용"></textarea><br>
-        <input type="file"><br>
+    <!-- localhost:3000/posts -->
+    <form action="./posts" method="post">
+        <input type="text" name="title" placeholder="게시물 제목"><br>
+        <input type="text" name="writer" placeholder="작성자" id="post-frm-writer" readonly><br>
+        <textarea placeholder="게시물 내용" name="content"></textarea><br>
+        <input type="file" name="img"><br>
         <input type="submit" value="게시물 등록">
     </form>
 
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('./users')
+                .then(res => res.json())
+                .then(user => {
+                    console.log('세션 정보', user);
+                    
+                })
+                .catch(err => {
+                    console.error('세션 정보 불러오기 실패', err);
+                });
+        });
+    </script>
 </body>
 
 </html>

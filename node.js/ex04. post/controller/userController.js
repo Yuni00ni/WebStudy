@@ -24,4 +24,8 @@ async function login(req, res) {
     }
 };
 
-module.exports = { login }
+function getSession(req, res) {
+    res.json(req.session.user);
+}
+
+module.exports = { login, getSession}
