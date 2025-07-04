@@ -3,8 +3,9 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
+const { createPost } = require('../controller/postController');
 
-const router = express.router();
+const router = express.Router();
 
 // 이미지 파일 저장
 const storage = multer.diskStorage({ // 서버 디스크 저장
