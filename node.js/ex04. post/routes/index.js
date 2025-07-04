@@ -12,4 +12,9 @@ router.get('/login', (req, res) => {
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
 })
+
+// 작성 페이지
+router.get('/write', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'views', 'write.html'));
+})
 module.exports = router;
