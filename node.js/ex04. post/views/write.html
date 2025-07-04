@@ -25,6 +25,7 @@
                 .then(res => res.json())
                 .then(user => {
                     console.log('세션 정보', user);
+                    document.getElementById('post-frm-writer').value = user.id;
                     
                 })
                 .catch(err => {
