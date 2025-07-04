@@ -9,6 +9,9 @@ const app = express();
 // middle-ware(미들웨어) : 요청 ~ 응답 존재하는 기술
 app.use(express.urlencoded({extended:true})); // body-parser
 
+// upload 폴더를 정적폴더(이미지업로드)로 사용 -> 폴더에 접근할 수 있는 경로
+app.use('/upload', express.static('upload'));
+
 app.use(session({ // session
   secret : 'mySecretKey',
   resave : false,
