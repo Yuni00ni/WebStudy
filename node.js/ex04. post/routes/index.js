@@ -17,4 +17,9 @@ router.get('/', (req, res) => {
 router.get('/write', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'views', 'write.html'));
 })
+
+router.get('/one', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'views', 'post.html'));
+})
+
 module.exports = router;

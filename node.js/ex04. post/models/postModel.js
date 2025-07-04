@@ -15,8 +15,9 @@ async function create(newPost) {
 
         // 게시물 추가
         const result = await Post.create(newPost);
-
         console.log(result);
+
+        return result;
 
     } catch (err) {
         console.log('create 실패', err);
@@ -26,5 +27,35 @@ async function create(newPost) {
 
 }
 
-module.exports = { create };
+// 게시글 목록 불러오기
+async function getPostAll() {
+    try {
+        await sequelize.authenticate();
+
+        await sequelize.sync({ alter: true });
+
+        const result = await Post.findAll();
+        return result;
+    } catch (err) {
+        console.log('게시물 전체 불러오기 실패', err);
+
+    }
+}
+
+// 게시글 상세 불러오기
+async function getPostOne(id) {
+    try {
+        await sequelize.authenticate();
+
+        await sequelize.sync({ alter: true });
+
+        const result = await Post.findByPk(id);
+        // fineOne({where:{title: '테스트'}}, attributes: ['writer']);
+        return result;
+    } catch (err) {
+        console.log('게시물 상세 불러오기 실패', err);
+
+    }
+}
+module.exports = { create, getPostAll, getPostOne };
 

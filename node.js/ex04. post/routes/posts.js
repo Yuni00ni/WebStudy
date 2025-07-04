@@ -3,7 +3,7 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
-const { createPost } = require('../controller/postController');
+const { createPost, getPosts, getPostById } = require('../controller/postController');
 
 const router = express.Router();
 
@@ -24,5 +24,9 @@ const upload = multer({ storage }); // 위에 정의된 내용 기반 미들웨�
 // single : 단일 파일
 // array(fieldName, maxCount => 최대개수)
 router.post('/', upload.single('img'), createPost);
+
+router.get('/', getPosts);
+
+router.get('/:id', getPostById);
 
 module.exports = router;
