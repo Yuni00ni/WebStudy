@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
 </head>
+
 <body>
-    <button>게시물 작성 페이지</button><br>
+    <!-- 현재 페이지 웹 주소 : localhost:3000/ -->
+    <!-- 작성페이지 웹 주소 : [GET]localhost:3000/write -->
+    <!-- js 기능 작성 -->
+    <button onclick="location.href= './write'">게시물 작성 페이지</button><br>
 
     <table id="post-list" border="1">
         <thead>
@@ -20,4 +25,5 @@
         </tbody>
     </table>
 </body>
+
 </html>
