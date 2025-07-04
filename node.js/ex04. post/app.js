@@ -2,6 +2,7 @@ const express = require('express');
 const indexRoutes = require('./routes/index');
 const userRoutes = require('./routes/users');
 const session = require('express-session');
+const postRouter = require('./routes/posts');
 
 const app = express();
 
@@ -19,7 +20,7 @@ app.use(session({ // session
 
 app.use('/', indexRoutes); // localhost:3000/ ~
 app.use('/users', userRoutes); // localhost:3000/users/ ~
-
+app.use('/posts', postRouter); //localhost:3000/posts/~
 
 app.listen(3000, () => {
   console.log('Server is runnig on http://localhost:3000');
