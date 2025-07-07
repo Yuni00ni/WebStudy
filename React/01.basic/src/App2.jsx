@@ -19,6 +19,9 @@ import './app2.css' // css 불러오기
     4. 태그를 사용할 때 -> 무조건 소문자로 작성하기! -> 대문자는 컴포넌트(파일)
     5. onclick속성 -> onClick(on 키워드 뒤에 붙는 이벤트 타입의 첫글자는 대문자로 시작)
     6. style속성 적용
+    6-1. className 속성 적용 후, css파일 연결
+    6-2. 객체형태로 삽입
+    6-3. 인라인스타일 방식
 */
 
 let msg = 'Hello React'
@@ -36,13 +39,23 @@ if (name === '고길동') {
     text = '어린이'
 }
 
+// 6-2. style 객체형태로 정의(카멜케이스)
+const welStyle = {
+    fontSize : '50px',
+    color : 'blue',
+    backgroundColor : 'yellow'
+}
 
 const App2 = () => {
     return (
-        <div>
+        <>
+            {/* return문 안에 여러개의 요소가 존재하면 하나의 부모요소로 감싸주어야 한다 
+                꼭 div태그가 아니여도 되고, 빈 태그로 감싸줘도 된다
+            */}
             <div className='item'>Hello React</div>
-            <div>ESG</div>
-            <div>{msg}</div>
+            <div style={welStyle}>ESG</div>
+            {/* 6-3. 인라인 스타일 방식 */}
+            <div style={{color : 'red', fontSize : '30px', backgroundColor : 'black'}}>{msg}</div>
 
             {/* 조건부 렌더링 */}
             {/* 조건이 하나일 때(단순 if문) */}
@@ -57,7 +70,7 @@ const App2 = () => {
             <p>
                 <button onClick={() => { alert('마우스 클릭') }}>클릭</button>
             </p>
-        </div>
+        </>
     )
 }
 
