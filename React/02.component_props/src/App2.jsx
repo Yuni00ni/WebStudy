@@ -8,6 +8,8 @@ import Menubox from './components/Menubox'
 
 const App2 = () => {
 
+    let temp = 'ice'
+
     return (
         <div>
             <div>
@@ -18,8 +20,8 @@ const App2 = () => {
                 <h3>아메리카노</h3>
                 <p>3000</p>
             </div>
-            <Menubox></Menubox>
-            <Menubox name="카페라떼" price="4000"></Menubox>
+            <Menubox temp={temp} name="바닐라라떼" price="5000"></Menubox>
+            <Menubox temp={temp} name="카페라떼" price="4000"></Menubox>
         </div>
     )
 }
