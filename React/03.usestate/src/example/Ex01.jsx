@@ -29,7 +29,6 @@ const Ex01 = () => {
             setNum1(num1 - 1)
         } else {
             console.log('음수는 허용 안함');
-
         }
 
     }
