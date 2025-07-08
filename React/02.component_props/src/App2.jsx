@@ -1,7 +1,7 @@
 import React from 'react'
 import Menubox from './components/Menubox'
 import Member from './components/Member'
-import './App2.css'
+// import './App2.css'
 // component(컴포넌트)
 // 반복되는 코드를 하나로 묶어서 처리할 때
 // 데이터를 받아줄 하위 컴포넌트로 사용
