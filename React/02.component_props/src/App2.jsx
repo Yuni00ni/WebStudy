@@ -6,6 +6,17 @@ import Menubox from './components/Menubox'
 // 데이터를 받아줄 하위 컴포넌트로 사용
 // 컴포넌트 생성 시, 대문자로 시작
 
+// 객체 비구조화 할당
+let student = {
+    name: '둘리',
+    sub: 'web',
+    mbti: 'entp'
+}
+
+let {name, sub, mbti } = student
+console.log(name, sub, mbti);
+
+
 const App2 = () => {
 
     let temp = 'ice'
