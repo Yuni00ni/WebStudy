@@ -8,7 +8,7 @@ const Menubox = ({name, price, temp}) => {
 
     return (
         <div>
-            <div>
+            <div class="menu-box">
                 <h3>{temp} {name}</h3>
                 <p>{price}</p>
             </div>
