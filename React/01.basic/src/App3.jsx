@@ -28,13 +28,19 @@ const App3 = () => {
         season = '가을'
     }else if(month == 12 || month == 1 || month == 2){
         season = '겨울'
+    }else {
+        alert('잘못된 입력입니다.')
     }
 
-    console.log(`${name}님 지금은 ${season}입니다. 좋은 하루 보내세요:)`);
+    // 출력하기
+    // console.log(`${name}님 지금은 ${season}입니다. 좋은 하루 보내세요:)`);
+    // document.write(`${date}\n <hr> ${name}님 지금은 ${season}입니다. 좋은 하루 보내세요:)`);
     
     return (
         <div>
-
+            <h1>{date}</h1>
+            <hr />
+            <div>{name}님 지금은 {season}입니다. 좋은 하루 보내세요</div>
         </div>
     )
 }
