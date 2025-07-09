@@ -9,7 +9,7 @@ const Ex04 = () => {
     ]
 
     let food = ['라면', '도시락', '샐러드']
-    let numlist = [2,4,6,8,10]
+    let numlist = [2, 4, 6, 8, 10]
 
     return (
         <div>
@@ -33,12 +33,12 @@ const Ex04 = () => {
 
             <h3>Case 3 : 배열데이터를 변경하기</h3>
             {/* map함수를 통해서 기존의 배열데이터를 => 버튼으로 변경 */}
-            {food.map((item) => (
-                <button key={item} style={ {backgroundColor : 'pink'}}>{item}</button>
+            {food.map((item) => ( 
+                <button key={item} style={{ backgroundColor: 'pink', cursor : 'pointer' }}>{item}</button>
             ))}
             <br />
             {numlist.map((item) => (
-                <button key={item} style={{backgroundColor : 'yellowgreen'}}>{item}</button>
+                <button key={item} style={{ backgroundColor: 'yellowgreen', cursor : 'pointer' }}>{item}</button>
             ))}
         </div>
     )
