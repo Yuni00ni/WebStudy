@@ -17,6 +17,7 @@ const Ex05map = ({ item }) => {
         <a href={item.SNS}><Button variant="warning">Instagram</Button></a>
       </Card.Body>
     </Card>
+    
   )
 }
 
