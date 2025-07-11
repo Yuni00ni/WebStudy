@@ -11,6 +11,7 @@ const Footer = () => {
         setIsDark(!isDark)
         console.log(isDark);
         console.log(e);
+        isDark ? e.target.innerText = 'Light Mode' : e.target.innerText = 'Dark Mode'
         
         
     }
@@ -19,14 +20,14 @@ const Footer = () => {
             <footer
                 onClick={toggleTheme}
                 className='footer'
-                style={{ backgroundColor : 'lightgray'
+                style={{ backgroundColor : isDark ? 'black' : 'lightgray'
                     // 배경색상 => 값을 삼항연산자로 처리
                     // state값이 참이라면 black 거짓이라면 lightgray
                 }}
             >
                 <button className='button' onClick={toggleTheme}>
                     Dark Mode
-                    {/* state값이 참이라면 버튼 안 텍스트를 Lishgt Mode 거짓이라면 Dark Modeㅇ */}
+                    {/* state값이 참이라면 버튼 안 텍스트를 Lishgt Mode 거짓이라면 Dark Mode */}
                 </button>
             </footer>
         </div>
