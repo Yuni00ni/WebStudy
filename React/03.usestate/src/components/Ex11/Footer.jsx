@@ -26,7 +26,7 @@ const Footer = () => {
             >
                 <button className='button' onClick={toggleTheme}>
                     Dark Mode
-                    {/* state값이 참이라면 버튼 안 텍스트를 Lishgt Mode 거짓이라면 Dark Mode */}
+                    {/* state값이 참이라면 버튼 안 텍스트를 Lishgt Mode 거짓이라면 Dark Modeㅇ */}
                 </button>
             </footer>
         </div>
