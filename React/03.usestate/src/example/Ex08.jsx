@@ -4,7 +4,7 @@ import '../style/ex08_input.css'
 const Ex08 = () => {
 
     // useRef 사용
-     const inputRef = useRef()
+    const inputRef = useRef()
 
     // 함수 선언부
     const buttonClick = () => {
@@ -14,7 +14,7 @@ const Ex08 = () => {
         alert(inputRef.current.value)
         // 입력 공간 초기화
         inputRef.current.value = ""
-        
+
     }
 
 
