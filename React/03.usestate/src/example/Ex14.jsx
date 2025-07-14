@@ -47,12 +47,30 @@ const Ex14 = () => {
         <div>
             <h1>영화 순위</h1>
             <table border='1px'>
+                <thead>
+                    <tr>
+                        <th>영화 순위</th>
+                        <th>영화 이름</th>
+                        <th>개봉일자</th>
+                    </tr>
+                </thead>
                 <tbody>
                     {/* 우리가 가지고 온 데이터는 => state변수 안에 있는 상태
                         map함수를 통해서 데이터를 한꺼번에 처리
                         반복되는 한 줄을 만들고 => 세칸을 만들어서
-                        영화 순위, 영화 이름, 영화 개봉일자 => 세 개의 데이터가 출력되게끔
+                        영화 순위, 영화 이름, 영화 개봉일자 => 세 개의 데이터가 출력되게끔(rank, movieNm, openDt)
                     */}
+                    {movieList.map((item) => (
+
+                            <tr key={item.rank}>
+                                <td>{item.rank}</td>
+                                <td>{item.movieNm}</td>
+                                <td>{item.openDt}</td>
+                            </tr>
+                    ))
+                        
+                            
+                    }
                 </tbody>
             </table>
         </div>
