@@ -33,12 +33,29 @@ const Ex14 = () => {
             .get(url)
             .then((res) => {
                 console.log(res.data.boxOfficeResult.dailyBoxOfficeList);
-                
+                setMovieList(res.data.boxOfficeResult.dailyBoxOfficeList)
+
+
+            })
+            .catch(() => {
+                console.log('failed');
+
             })
     }, [])
 
     return (
-        <div>Ex14</div>
+        <div>
+            <h1>영화 순위</h1>
+            <table border='1px'>
+                <tbody>
+                    {/* 우리가 가지고 온 데이터는 => state변수 안에 있는 상태
+                        map함수를 통해서 데이터를 한꺼번에 처리
+                        반복되는 한 줄을 만들고 => 세칸을 만들어서
+                        영화 순위, 영화 이름, 영화 개봉일자 => 세 개의 데이터가 출력되게끔
+                    */}
+                </tbody>
+            </table>
+        </div>
     )
 }
 
