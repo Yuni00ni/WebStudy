@@ -48,7 +48,7 @@ const Ex14 = () => {
             <h1>영화 순위</h1>
             <table border='1px'>
                 <thead>
-                    <tr>
+                    <tr style={{textAlign : 'center'}}>
                         <th>영화 순위</th>
                         <th>영화 이름</th>
                         <th>개봉일자</th>
@@ -59,17 +59,18 @@ const Ex14 = () => {
                         map함수를 통해서 데이터를 한꺼번에 처리
                         반복되는 한 줄을 만들고 => 세칸을 만들어서
                         영화 순위, 영화 이름, 영화 개봉일자 => 세 개의 데이터가 출력되게끔(rank, movieNm, openDt)
+                        key={item.rnum(순번)}
                     */}
                     {movieList.map((item) => (
 
-                            <tr key={item.rank}>
-                                <td>{item.rank}</td>
-                                <td>{item.movieNm}</td>
-                                <td>{item.openDt}</td>
-                            </tr>
+                        <tr key={item.rnum} style={{textAlign : 'center'}}>
+                            <td>{item.rank}</td>
+                            <td>{item.movieNm}</td>
+                            <td>{item.openDt}</td>
+                        </tr>
                     ))
-                        
-                            
+
+
                     }
                 </tbody>
             </table>
