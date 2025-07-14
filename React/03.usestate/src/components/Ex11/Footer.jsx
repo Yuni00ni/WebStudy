@@ -7,27 +7,26 @@ const Footer = () => {
 
     // 함수명 => toggleTheme
     // 사용목적은 state안에 있는 값을 계속 반대로 바꾸기 위해서
-    const toggleTheme = (e) => {
+    const toggleTheme = () => {
         setIsDark(!isDark)
-        console.log(isDark);
-        console.log(e);
-        isDark ? e.target.innerText = 'Light Mode' : e.target.innerText = 'Dark Mode'
-        
-        
+
+
     }
     return (
         <div>
             <footer
                 onClick={toggleTheme}
                 className='footer'
-                style={{ backgroundColor : isDark ? 'black' : 'lightgray'
-                    // 배경색상 => 값을 삼항연산자로 처리
-                    // state값이 참이라면 black 거짓이라면 lightgray
+                // 배경색상 => 값을 삼항연산자로 처리
+                // state값이 참이라면 black 거짓이라면 lightgray
+                style={{
+                    backgroundColor: isDark ? 'black' : 'lightgray'
                 }}
             >
                 <button className='button' onClick={toggleTheme}>
-                    Dark Mode
-                    {/* state값이 참이라면 버튼 안 텍스트를 Lishgt Mode 거짓이라면 Dark Mode */}
+                    {/* state값이 참이라면 버튼 안 텍스트를 Light Mode 거짓이라면 Dark Mode */}
+                    {isDark ? 'Light Mode' : 'Dark Mode'}
+
                 </button>
             </footer>
         </div>
