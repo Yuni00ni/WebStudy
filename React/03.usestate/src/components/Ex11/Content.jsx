@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { ThemeContext } from '../../context/Ex11ThemeContext'
 
 const Content = () => {
@@ -14,10 +14,10 @@ const Content = () => {
     <div
       className='content'
       style={{
-        backgroundColor : isDark ? 'black' : 'lightgray'
+        backgroundColor : isDark ? 'black' : 'white'
       }}
     >
-      <h1 style={{ color : isDark ? 'lightgray' : 'black'}}>지각하지 않기! 결석하지 않기!</h1>
+      <h1 style={{ color : isDark ? 'white' : 'black'}}>지각하지 않기! 결석하지 않기!</h1>
     </div>
   )
 }

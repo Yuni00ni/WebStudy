@@ -11,9 +11,9 @@ const Header = () => {
     // div태그의 스타일 속성 변경 => 글자색, 배경색
     <div
       className='header'
-      style={{backgroundColor : isDark ? 'black' : 'lightgray'}}
+      style={{backgroundColor : isDark ? 'black' : 'white'}}
     >
-      <h1 style={{color : isDark ? 'lightgray' : 'black'}}>스마트인재개발원</h1>
+      <h1 style={{color : isDark ? 'white' : 'black'}}>스마트인재개발원</h1>
     </div>
   )
 }
