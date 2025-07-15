@@ -15,7 +15,7 @@ const Main = () => {
     const nav = useNavigate()
 
     // 로그인 상태
-    let auth = false
+    let auth = true
 
     return (
         <div>
@@ -27,7 +27,7 @@ const Main = () => {
             <Link to='https://www.naver.com'>네이버로 이동</Link>
             <br />
             {/* 삼항연산자 -> auth변수 안에 있는 값이 참이라면 클릭했을 때 product컴포넌트를 보여주고, 거짓이라면 Main컴포넌트를 보여주기 */}
-            <button onClick={() => {!auth ? nav('/product') : nav('/Main')}}>상품페이지 이동</button>
+            <button onClick={() => {auth ? nav('/product') : nav('/')}}>상품페이지 이동</button>
         </div>
     )
 }

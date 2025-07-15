@@ -22,7 +22,8 @@ const App2 = () => {
                 <Route path='/' element={<Main />}></Route>
                 <Route path='/about' element={<About />}></Route>
                 {/* 메인경로 뒤에 product라는 주소값이 붙게 되면은 => Product컴포넌트를 보여주겠다*/}
-                <Route path='/product' element={<Product />}></Route>
+                <Route path='/product/:num' element={<Product />}></Route>
+                {/* 경로 : product뒤에 숫자가 붙어 있다면 num이라는 파라미터 변수에 담겠다 */}
             </Routes>
         </div>
     )
