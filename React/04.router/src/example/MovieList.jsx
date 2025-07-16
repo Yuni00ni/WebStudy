@@ -37,13 +37,14 @@ const MovieList = () => {
                     `https://image.tmdb.org/t/p/w200`
                 */}
                 {movie.map((item) => (
-                    <div key= {item.id} className='movie'>
-                        <Link to='/movie'><img src={`https://image.tmdb.org/t/p/w200${item.poster_path}`} />
+                    <div key={item.id} className='movie'>
+                        <Link to={`/movie/${item.id}`}>
+                            <img src={`https://image.tmdb.org/t/p/w200${item.poster_path}`} />
                         </Link>
-                            <div className='movie-info'>
-                                <h2>{item.original_title}</h2>
-                                <p>Rating : {item.vote_average}</p>
-                            </div>
+                        <div className='movie-info'>
+                            <h2>{item.original_title}</h2>
+                            <p>Rating : {item.vote_average}</p>
+                        </div>
                     </div>
                 ))}
             </div>
