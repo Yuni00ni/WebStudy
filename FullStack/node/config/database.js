@@ -12,4 +12,4 @@ const conn = mysql.createConnection({
 })
 
 // 외부에서 사용할 수 있도록 내보내기
-module.exports = conn
+module.exports = conn 
