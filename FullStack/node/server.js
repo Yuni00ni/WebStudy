@@ -3,7 +3,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const userRouter = require('./router/userRouter')
+const userRouter = require('./router/userRouter.js')
 
 // 폼형태에서 post 방식으로 제출시 필요한 미들웨어
 app.use(express.urlencoded({ extended: true }))
@@ -18,4 +18,7 @@ app.use(cors())
 app.use('/user', userRouter)
 
 // 요청할 시 사용할 포트번호 설정
-app.listen(8000)
+app.listen(8000, () => {
+    console.log('Server running on port 8000');
+    
+})
